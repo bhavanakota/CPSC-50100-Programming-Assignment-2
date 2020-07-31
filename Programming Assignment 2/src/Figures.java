@@ -20,7 +20,7 @@ public class Figures {
 		Scanner scan = new Scanner(System.in);
 
 		int size;
-		int option;
+		int option = 0;
 
 		System.out.print("Enter the size of the figure (odd number): ");
 		size = scan.nextInt();
@@ -35,43 +35,49 @@ public class Figures {
 		}
 		System.out.print("\n");
 
-		// Printing out the menu to pick from.
-		System.out.print("Menu\n" + "1. Print box\n" + "2. Print diamond\n" + "3. Print X \n" + "4. Quit program\n");
+		// Printing out the menu to pick from in a while loop. Prepping the loop to exit
+		// if option 4 is entered.
 
-		System.out.print("\n");
+		while (option != 4) {
 
-		System.out.print("Please select an option: ");
-		option = scan.nextInt();
+			System.out.print("\n");
+			System.out
+					.print("Menu\n" + "1. Print box\n" + "2. Print diamond\n" + "3. Print X \n" + "4. Quit program\n");
+			System.out.print("\n");
+			System.out.print("Please select an option: ");
+			option = scan.nextInt();
 
-		if (option == 1) {
-			Figures box = new Figures();
-			box.size = size;
-			System.out.println("\n");
-			printBox();
-		}
+			if (option == 1) {
+				Figures box = new Figures();
+				Figures.size = size;
+				System.out.println("\n");
+				printBox();
+			}
 
-		if (option == 2) {
-			Figures diamond = new Figures();
-			Figures.size = size;
-			System.out.println("\n");
-			printDiamond();
-		}
+			if (option == 2) {
+				Figures diamond = new Figures();
+				Figures.size = size;
+				System.out.println("\n");
+				printDiamond();
+			}
 
-		if (option == 3) {
-			Figures x = new Figures();
-			x.size = size;
-			System.out.println("\n");
-			printX();
-		}
+			if (option == 3) {
+				Figures x = new Figures();
+				Figures.size = size;
+				System.out.println("\n");
+				printX();
+			}
 
-		if (option == 4) {
-			System.out.println("\n");
-			System.out.println("Good bye! ");
-			System.exit(0);
+			if (option == 4) {
+				System.out.println("\n");
+				System.out.println("Good bye! ");
+				System.exit(0);
+			}
 		}
 		scan.close();
 	}
 
+	// Creating the box shape
 	public static void printBox() {
 
 		for (int i = 0; i < size; i++) {
@@ -82,6 +88,7 @@ public class Figures {
 		}
 	}
 
+	// Creating the diamond shape
 	public static void printDiamond() {
 
 		int position1 = (int) Math.floor(size / 2);
@@ -114,6 +121,7 @@ public class Figures {
 		}
 	}
 
+	// Creating the X shape
 	public static void printX() {
 
 		for (int i = 0; i < size; i++) {
