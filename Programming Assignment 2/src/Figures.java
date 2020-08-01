@@ -14,7 +14,6 @@ public class Figures {
 
 		// Printing out identifying information
 		System.out.print("Programming Fundamentals\n" + "Name: Bhavana Kota\n" + "PROGRAMMING ASSIGNMENT 2\n");
-
 		System.out.println("\n");
 
 		Scanner scan = new Scanner(System.in);
@@ -53,21 +52,18 @@ public class Figures {
 				System.out.println("\n");
 				printBox();
 			}
-
 			if (option == 2) {
 				Figures diamond = new Figures();
 				Figures.size = size;
 				System.out.println("\n");
 				printDiamond();
 			}
-
 			if (option == 3) {
 				Figures x = new Figures();
 				Figures.size = size;
 				System.out.println("\n");
 				printX();
 			}
-
 			if (option == 4) {
 				System.out.println("\n");
 				System.out.println("Good bye! ");
@@ -113,7 +109,6 @@ public class Figures {
 				position1 += 1;
 				position2 -= 1;
 			}
-
 			if (lineCount < middle) {
 				position1 -= 1;
 				position2 += 1;
