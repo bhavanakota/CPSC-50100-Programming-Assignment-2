@@ -14,6 +14,7 @@ public class Figures {
 
 		// Printing out identifying information
 		System.out.print("Programming Fundamentals\n" + "Name: Bhavana Kota\n" + "PROGRAMMING ASSIGNMENT 2\n");
+
 		System.out.println("\n");
 
 		Scanner scan = new Scanner(System.in);
@@ -29,7 +30,7 @@ public class Figures {
 		while (size % 2 == 0) {
 			System.out.println("Invalid figure size - must be an odd number");
 			System.out.print("\n");
-			System.out.print("Renter the size of the figure: ");
+			System.out.print("Reenter the size of the figure: ");
 			size = scan.nextInt();
 		}
 		System.out.print("\n");
