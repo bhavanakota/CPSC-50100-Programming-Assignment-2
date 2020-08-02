@@ -5,10 +5,9 @@
  */
 
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class Figures {
-
-	private static int size;
 
 	public static void main(String[] args) {
 
@@ -27,11 +26,21 @@ public class Figures {
 
 		// This checks for an odd number and prints an error if an even number is
 		// entered.
-		while (size % 2 == 0) {
-			System.out.println("Invalid figure size - must be an odd number");
-			System.out.print("\n");
-			System.out.print("Reenter the size of the figure: ");
-			size = scan.nextInt();
+		while (size % 2 == 0 || size < 0) {
+			try {
+				System.out.println("Invalid figure size - must be an odd number");
+				System.out.print("\n");
+				System.out.print("Reenter the size of the figure: ");
+				size = scan.nextInt();
+
+			} catch (InputMismatchException e) {
+				size = scan.nextInt();
+				System.out.println("Invalid figure size - must be an odd number");
+				System.out.print("\n");
+				System.out.print("Reenter the size of the figure: ");
+				size = scan.nextInt();
+			}
+
 		}
 		System.out.print("\n");
 
@@ -48,34 +57,28 @@ public class Figures {
 			option = scan.nextInt();
 
 			if (option == 1) {
-				Figures box = new Figures();
-				Figures.size = size;
 				System.out.println("\n");
-				printBox();
+				printBox(size);
 			}
 			if (option == 2) {
-				Figures diamond = new Figures();
-				Figures.size = size;
 				System.out.println("\n");
-				printDiamond();
+				printDiamond(size);
 			}
 			if (option == 3) {
-				Figures x = new Figures();
-				Figures.size = size;
 				System.out.println("\n");
-				printX();
+				printX(size);
 			}
 			if (option == 4) {
 				System.out.println("\n");
 				System.out.println("Good bye! ");
 				System.exit(0);
 			}
+			scan.close();
 		}
-		scan.close();
 	}
 
 	// Creating the box shape
-	public static void printBox() {
+	public static void printBox(int size) {
 
 		for (int i = 0; i < size; i++) {
 			for (int j = 0; j < size; j++) {
@@ -86,7 +89,7 @@ public class Figures {
 	}
 
 	// Creating the diamond shape
-	public static void printDiamond() {
+	public static void printDiamond(int size) {
 
 		int position1 = (int) Math.floor(size / 2);
 		int position2 = position1 + 1;
@@ -110,6 +113,7 @@ public class Figures {
 				position1 += 1;
 				position2 -= 1;
 			}
+
 			if (lineCount < middle) {
 				position1 -= 1;
 				position2 += 1;
@@ -118,7 +122,7 @@ public class Figures {
 	}
 
 	// Creating the X shape
-	public static void printX() {
+	public static void printX(int size) {
 
 		for (int i = 0; i < size; i++) {
 			for (int j = 0; j < size; j++) {
