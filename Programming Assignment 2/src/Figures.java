@@ -33,14 +33,7 @@ public class Figures {
 				System.out.print("Reenter the size of the figure: ");
 				size = scan.nextInt();
 
-			} catch (InputMismatchException e) {
-				size = scan.nextInt();
-				System.out.println("Invalid figure size - must be an odd number");
-				System.out.print("\n");
-				System.out.print("Reenter the size of the figure: ");
-				size = scan.nextInt();
 			}
-
 		}
 		System.out.print("\n");
 
