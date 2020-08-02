@@ -103,7 +103,6 @@ public class Figures {
 				position1 += 1;
 				position2 -= 1;
 			}
-
 			if (lineCount < middle) {
 				position1 -= 1;
 				position2 += 1;
