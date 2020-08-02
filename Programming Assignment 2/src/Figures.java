@@ -63,8 +63,8 @@ public class Figures {
 				System.out.println("Good bye! ");
 				System.exit(0);
 			}
-			scan.close();
 		}
+		scan.close();
 	}
 
 	// Creating the box shape
