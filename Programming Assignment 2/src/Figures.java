@@ -27,13 +27,10 @@ public class Figures {
 		// This checks for an odd number and prints an error if an even number is
 		// entered.
 		while (size % 2 == 0 || size < 0) {
-			try {
-				System.out.println("Invalid figure size - must be an odd number");
-				System.out.print("\n");
-				System.out.print("Reenter the size of the figure: ");
-				size = scan.nextInt();
-
-			}
+			System.out.println("Invalid figure size - must be an odd number");
+			System.out.print("\n");
+			System.out.print("Reenter the size of the figure: ");
+			size = scan.nextInt();
 		}
 		System.out.print("\n");
 
@@ -113,7 +110,7 @@ public class Figures {
 			}
 		}
 	}
-
+	
 	// Creating the X shape
 	public static void printX(int size) {
 
